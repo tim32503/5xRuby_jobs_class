@@ -60,3 +60,8 @@ template:
 #### 步驟五：搜尋
 1. urlSearch => 'https://job-list-9527.herokuapp.com/api/v1/jobs/search?q=要帶入的搜尋參數'
 2. 搜尋後的頁面功能均須包含前四個步驟。
+3. 當查詢結果為 0 時，欄位內容需給'查無條件'。 
+![截圖 2021-04-26 下午5 00 38](https://user-images.githubusercontent.com/67591631/116057028-fb917180-a6b0-11eb-8abf-388326128fdb.png)
+
+
+

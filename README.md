@@ -4,10 +4,11 @@
 ![截圖 2021-04-22 下午12 29 29](https://user-images.githubusercontent.com/67591631/115655717-6e73b300-a366-11eb-9289-3f892d16ed42.png)
 
 #### 步驟一： 串接 API 將資料取回
-1. url => https://job-list-9527.herokuapp.com/api/v1/jobs/job_info 
+1. url => https://job-list-9527.herokuapp.com/api/v1/jobs/job_info 。
+2. 可以在開發者工具 console 裡看到 fetch 回來的資料。
 
 #### 步驟二： Render 職缺資訊
-1. 將需要用到欄位資訊職缺資訊放進 template，並渲染在 `<div class="container"> 目標位置 </div>` 裡面 。
+1. 根據下面的 template 填入相對應的欄位資料，並渲染在 `<div class="container"> 目標位置 </div>` 裡面 。
 <br>
 template:
 
@@ -42,8 +43,11 @@ template:
 帶入欄位資訊 => link, date, name, salary, company_name, address
 
 #### 步驟三： 分頁
+前情提要：
+來到此步驟時，已經可以看到所有資料(共 202 筆)渲染在畫面上了，接下來要來進行分頁。
+
 1. 每一頁都只會有 10 筆資料，例如總共有 202 筆職缺資訊，將會有 21 頁。
-2. 點擊頁碼可以切換該頁 10 筆資料。
+2. 點擊頁碼可以取得該頁的 10 筆資料。
 3. 該頁頁碼需加 active-background (class) 。
 4. 頁碼呈現方式為該頁前後兩頁。<br>
 例如:<br>

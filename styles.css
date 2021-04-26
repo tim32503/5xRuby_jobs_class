@@ -41,7 +41,6 @@
 .css-table {
     display: table;
     border-radius: 10px;
-    border: rgb(214, 211, 211) 1px solid;
     margin-bottom: 20px;
     margin-top: 50px;
 }
@@ -76,10 +75,6 @@
 /* .css-tr:hover {
     box-shadow: 10px 10px 5px gray;
 } */
-
-.css-thead .css-th:nth-child(3) {
-    width: 200px;
-}
 
 .css-th, .css-td {
     display: table-cell;

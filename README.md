@@ -6,6 +6,7 @@
 #### 步驟一： 串接 API 將資料取回
 1. url => https://job-list-9527.herokuapp.com/api/v1/jobs/job_info 。
 2. 可以在開發者工具 console 裡看到 fetch 回來的資料。
+<img width="543" alt="截圖 2021-04-27 上午9 18 16" src="https://user-images.githubusercontent.com/67591631/116170519-8cac2b00-a739-11eb-9947-fdb6f9222e99.png">
 
 #### 步驟二： Render 職缺資訊
 1. 根據下面的 template 填入相對應的欄位資料，並渲染在 `<div class="container"> 目標位置 </div>` 裡面 。
@@ -55,6 +56,8 @@ template:
 如果是 2，頁碼是 1 2 3 4 ，<br>
 如果是 1，頁碼 1 2 3 ，<br>
 尾頁則是相反。
+![切換頁碼](https://user-images.githubusercontent.com/67591631/116170834-24117e00-a73a-11eb-9270-be1d70bd527a.gif)
+
 
 #### 步驟四：上下頁
 1. 增加 上下頁 Button 切換頁面功能 。

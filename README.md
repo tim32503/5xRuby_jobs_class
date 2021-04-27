@@ -61,12 +61,17 @@ template:
 
 #### 步驟四：上下頁
 1. 增加 上下頁 Button 切換頁面功能 。
+![上下頁](https://user-images.githubusercontent.com/67591631/116171111-bca7fe00-a73a-11eb-89e1-b26f83228c01.gif)
 2. 當現在處於第一頁，上一頁按鈕會消失。
 3. 當現在處於最後一頁，下一頁按鈕會消失。
+![截圖 2021-04-27 上午9 24 19](https://user-images.githubusercontent.com/67591631/116170979-76eb3580-a73a-11eb-946b-f98a35ea1027.png)
+![截圖 2021-04-27 上午9 24 49](https://user-images.githubusercontent.com/67591631/116170988-7c488000-a73a-11eb-8090-a3a369264291.png)
+
 
 #### 步驟五：搜尋
 1. urlSearch => 'https://job-list-9527.herokuapp.com/api/v1/jobs/search?q=要帶入的搜尋參數'
 2. 搜尋後的頁面功能均須包含前四個步驟。
+![搜尋3](https://user-images.githubusercontent.com/67591631/116171833-270d6e00-a73c-11eb-8178-e60bae13b9c7.gif)
 3. 當查詢結果為 0 時，欄位內容需給'查無條件'。 
 ![截圖 2021-04-26 下午5 00 38](https://user-images.githubusercontent.com/67591631/116057028-fb917180-a6b0-11eb-8abf-388326128fdb.png)
 

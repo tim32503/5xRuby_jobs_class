@@ -9,15 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json())
     .then(object => object.data)
     .then(jobList => {
-      if(jobList.length > 0){
-        totalPage = Math.ceil(jobList.length / pageSize);
+      totalPage = Math.ceil(jobList.length / pageSize);
 
-        // 處理資料表格
-        dataTable(jobList, currentPage);
+      // 處理資料表格
+      dataTable(jobList, currentPage);
 
-        // 分頁按鈕
-        paginationBtn(jobList, currentPage);
-      }
+      // 分頁按鈕
+      paginationBtn(jobList, currentPage);
     });
 
   // 搜尋按鈕監聽事件
@@ -30,21 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(searchAPI)
       .then(response => response.json())
       .then(jobList => {
-        if(jobList.length > 0){
-          totalPage = Math.ceil(jobList.length / pageSize);
+        totalPage = (jobList.length === 0) ? 1 : Math.ceil(jobList.length / pageSize);
 
-          // 刪除 container 中所有物件
-          tableEl = e.target.parentElement.parentElement.parentElement.nextElementSibling.firstElementChild;
-          paginationEl = e.target.parentElement.parentElement.parentElement.nextElementSibling.lastElementChild;
-          tableEl.remove();
-          paginationEl.remove();
+        // 刪除 container 中所有物件
+        tableEl = e.target.parentElement.parentElement.parentElement.nextElementSibling.firstElementChild;
+        paginationEl = e.target.parentElement.parentElement.parentElement.nextElementSibling.lastElementChild;
+        tableEl.remove();
+        paginationEl.remove();
 
-          // 處理資料表格
-          dataTable(jobList, currentPage);
+        // 處理資料表格
+        dataTable(jobList, currentPage);
 
-          // 分頁按鈕
-          paginationBtn(jobList, currentPage);
-        }
+        // 分頁按鈕
+        paginationBtn(jobList, currentPage);
       });
   });
 });
@@ -75,44 +71,57 @@ function dataTable(jobList, current){
   tbody = document.createElement('div');
   tbody.classList.add('css-t-body');
   
-  // callback 處理每列內容
-  const callback = (job, index, array) => {
-    if(index >= ((current - 1) * pageSize) && index < (current * pageSize)){
-      a = document.createElement('a');
-      a.classList.add('css-tr');
-      a.href = 'https://' + job.link;
+  if(jobList.length > 0){
+    // callback 處理每列內容
+    const callback = (job, index, array) => {
+      if(index >= ((current - 1) * pageSize) && index < (current * pageSize)){
+        a = document.createElement('a');
+        a.classList.add('css-tr');
+        a.href = 'https://' + job.link;
 
-      td = document.createElement('div');
-      td.classList.add('css-td');
-      td.textContent = job.date;
-      a.appendChild(td);
+        td = document.createElement('div');
+        td.classList.add('css-td');
+        td.textContent = job.date;
+        a.appendChild(td);
 
-      td = document.createElement('div');
-      td.classList.add('css-td');
-      td.textContent = job.name;
-      a.appendChild(td);
+        td = document.createElement('div');
+        td.classList.add('css-td');
+        td.textContent = job.name;
+        a.appendChild(td);
 
-      td = document.createElement('div');
-      td.classList.add('css-td');
-      td.textContent = job.salary;
-      a.appendChild(td);
+        td = document.createElement('div');
+        td.classList.add('css-td');
+        td.textContent = job.salary;
+        a.appendChild(td);
 
-      td = document.createElement('div');
-      td.classList.add('css-td');
-      td.textContent = job.company_name;
-      a.appendChild(td);
+        td = document.createElement('div');
+        td.classList.add('css-td');
+        td.textContent = job.company_name;
+        a.appendChild(td);
 
-      td = document.createElement('div');
-      td.classList.add('css-td');
-      td.textContent = job.address;
-      a.appendChild(td);
-      
-      tbody.appendChild(a);
+        td = document.createElement('div');
+        td.classList.add('css-td');
+        td.textContent = job.address;
+        a.appendChild(td);
+        
+        tbody.appendChild(a);
+      }
     }
-  }
 
-  // 迴圈處理callback
-  jobList.forEach(callback);
+    // 迴圈處理callback
+    jobList.forEach(callback);
+  }else{
+    a = document.createElement('a');
+    a.classList.add('css-tr');
+    a.href = '#';
+
+    td = document.createElement('div');
+    td.classList.add('css-td');
+    td.textContent = '查無資料';
+    a.appendChild(td);
+
+    tbody.appendChild(a);
+  }
 
   // 插入物件，呈現表格
   table.appendChild(thead);

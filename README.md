@@ -64,7 +64,7 @@ template:
 ![上下頁](https://user-images.githubusercontent.com/67591631/116171111-bca7fe00-a73a-11eb-89e1-b26f83228c01.gif)
 2. 當現在處於第一頁，上一頁按鈕會消失。
 ![截圖 2021-04-27 上午9 24 19](https://user-images.githubusercontent.com/67591631/116170979-76eb3580-a73a-11eb-946b-f98a35ea1027.png)
-4. 當現在處於最後一頁，下一頁按鈕會消失。
+3. 當現在處於最後一頁，下一頁按鈕會消失。
 ![截圖 2021-04-27 上午9 24 49](https://user-images.githubusercontent.com/67591631/116170988-7c488000-a73a-11eb-8090-a3a369264291.png)
 
 
